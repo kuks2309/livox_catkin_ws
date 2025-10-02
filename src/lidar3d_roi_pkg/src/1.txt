@@ -1,0 +1,50 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(lidar_3d_roi_pkg)
+
+## Compile as C++11, supported in ROS Kinetic and newer
+# add_compile_options(-std=c++11)
+
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  pcl_ros
+  roscpp
+  sensor_msgs
+  cv_bridge   # cv_bridge를 여기에 추가
+)
+# OpenCV 찾기
+find_package(OpenCV REQUIRED)
+
+# 헤더 파일 경로에 OpenCV 포함
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+
+catkin_package(
+ INCLUDE_DIRS include
+ LIBRARIES lidar_3d_roi_pkg
+ CATKIN_DEPENDS pcl_ros roscpp sensor_msgs
+ DEPENDS system_lib
+)
+
+###########
+## Build ##
+###########
+
+## Specify additional locations of header files
+## Your package locations should be listed before other locations
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(lidar_3d_roi_node src/lidar_3d_roi_node.cpp)
+target_link_libraries(lidar_3d_roi_node ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
+
+add_executable(lidar_3d_detect_tire_node src/lidar_3d_detect_tire.cpp)
+target_link_libraries(lidar_3d_detect_tire_node ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES})

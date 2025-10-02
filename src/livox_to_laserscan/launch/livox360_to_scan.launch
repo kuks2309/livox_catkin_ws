@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<launch>
+	
+	
+	<node pkg="tf" type="static_transform_publisher" name="base_link_livox_scan_tf" args="0.0 0.0 0.3 0.0 0.0 0.0 base_link livox_frame 50" />
+    <!-- Arguments for Livox MID-360 -->
+    <arg name="cloud_in" default="/livox/lidar" />
+    <arg name="scan_out" default="/scan" />
+    <arg name="target_frame" default="livox_frame" />
+    <arg name="utm_frame" default="utm" />
+    <arg name="min_height" default="-0.1" />
+    <arg name="max_height" default="1.4" />
+    <arg name="range_min" default="0.1" />
+    <arg name="range_max" default="260.0" />
+
+    <!-- Pointcloud to LaserScan conversion for Livox MID-360 -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" 
+          name="livox360_to_laserscan" output="screen">
+        
+        <!-- Topic remapping -->
+        <remap from="cloud_in" to="$(arg cloud_in)" />
+        <remap from="scan" to="$(arg scan_out)" />
+        
+        <!-- Frame settings -->
+        <param name="target_frame" value="$(arg target_frame)" />
+        
+        <!-- Height filtering for MID-360 (lidar at 0.4m above base_link) -->
+        <param name="min_height" value="$(arg min_height)" />
+        <param name="max_height" value="$(arg max_height)" />
+        
+        <!-- Angular settings - Full 360 degree coverage -->
+        <param name="angle_min" value="-3.14159" />
+        <param name="angle_max" value="3.14159" />
+        <param name="angle_increment" value="0.00174" />  <!-- ~0.1 degrees for higher resolution -->
+        
+        <!-- Range settings for MID-360 -->
+        <param name="range_min" value="$(arg range_min)" />
+        <param name="range_max" value="$(arg range_max)" />
+        
+        <!-- Performance settings optimized for Livox -->
+        <param name="scan_time" value="0.1" />  <!-- 10 Hz -->
+        <param name="use_inf" value="true" />
+        <param name="transform_tolerance" value="0.05" />  <!-- Relaxed for Livox timing -->
+        <param name="concurrency_level" value="1" />
+        
+        <!-- Additional Livox-specific settings -->
+        <param name="inf_epsilon" value="1.0" />
+        
+    </node>
+
+</launch>

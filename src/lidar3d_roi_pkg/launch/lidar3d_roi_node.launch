@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="lidar3d_roi_pkg" type="lidar3d_roi_node" name="lidar3d_roi_node" output="screen">
+    <param name="x_min" value="0.0" />
+    <param name="x_max" value="100.0" />
+    <param name="y_min" value="-20.0" />
+    <param name="y_max" value="20.0" />
+    <param name="z_min" value="-0.4" />
+    <param name="z_max" value="15.0" />
+  </node>
+</launch>

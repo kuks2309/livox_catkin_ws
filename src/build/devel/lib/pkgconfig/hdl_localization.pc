@@ -1,0 +1,8 @@
+prefix=/home/amap/livox_catkin_ws/src/build/devel
+
+Name: hdl_localization
+Description: Description of hdl_localization
+Version: 0.0.0
+Cflags: -I/home/amap/livox_catkin_ws/src/build/devel/include -I/home/amap/livox_catkin_ws/src/hdl_localization/include
+Libs: -L${prefix}/lib 
+Requires: 

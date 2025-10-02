@@ -1,0 +1,36 @@
+# Livox MI360 to LaserScan Configuration
+
+# Input/Output topics
+cloud_in_topic: "/livox/lidar"
+scan_out_topic: "/scan"
+
+# Target frame for the laser scan
+target_frame: "velodyne"
+
+# Height filtering (meters) - adjust based on robot height
+min_height: -0.3    # Points below this height will be ignored
+max_height: 2.0     # Points above this height will be ignored
+
+# Angular range (radians)
+angle_min: -3.14159  # -180 degrees
+angle_max: 3.14159   # +180 degrees
+angle_increment: 0.00436  # ~0.25 degrees (720 points for 360 degrees)
+
+# Range filtering (meters)
+range_min: 0.5      # Minimum range (ignore points too close)
+range_max: 80.0     # Maximum range (Livox MI360 max ~100m, set conservative)
+
+# Scan time (seconds) - time between scans
+scan_time: 0.1      # 10 Hz
+
+# Use inf for max range instead of range_max
+use_inf: true
+
+# Transform tolerance (seconds)
+transform_tolerance: 0.01
+
+# Concurrency level (number of threads)
+concurrency_level: 1
+
+# Whether to use the most recent transform available
+use_time: true

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: livox_to_laserscan
+Description: Description of livox_to_laserscan
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy roscpp sensor_msgs geometry_msgs tf pcl_ros

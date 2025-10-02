@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/mr/livox_catkin_ws/src/lidar_3d_roi_pkg/build/devel/setup.sh

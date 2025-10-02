@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Livox MID-360 to LaserScan conversion -->
+    <include file="$(find livox_to_laserscan)/launch/livox360_to_scan.launch">
+        <arg name="cloud_in" value="/livox/lidar"/>
+        <arg name="scan_out" value="/scan"/>
+        <arg name="target_frame" value="livox_frame"/>
+    </include>
+    
+    <!-- UTM Obstacle Mapper -->
+    <node pkg="navigation" type="utm_obstacle_mapper" name="utm_obstacle_mapper" output="screen">
+        <param name="laser_frame" value="livox_frame"/>
+        <param name="utm_frame" value="utm_odom"/>
+        <param name="map_size" value="200.0"/>
+        <param name="resolution" value="0.2"/>
+        <param name="update_rate" value="10.0"/>
+        
+        <!-- Subscribe to scan topic from livox conversion -->
+        <remap from="/scan" to="/scan"/>
+    </node>
+    
+    <!-- TF 구조는 이미 존재: utm_odom -> base_footprint -> base_link -> livox_frame -->
+    <!-- 별도의 static TF publisher 불필요 -->
+    
+</launch>

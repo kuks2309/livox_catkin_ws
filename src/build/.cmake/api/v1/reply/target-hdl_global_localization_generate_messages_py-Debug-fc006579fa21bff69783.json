@@ -1,0 +1,178 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include",
+			"generate_messages",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"build/hdl_global_localization/cmake/hdl_global_localization-genmsg.cmake",
+			"/opt/ros/noetic/share/genmsg/cmake/genmsg-extras.cmake",
+			"hdl_global_localization/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 51,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 307,
+				"parent" : 1
+			},
+			{
+				"file" : 0,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 264,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 366,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 363,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 369,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 275,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 273,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 271,
+				"parent" : 3
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "sensor_msgs_generate_messages_py::@94e188980ebab9e55e97"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "std_msgs_generate_messages_py::@94e188980ebab9e55e97"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "geometry_msgs_generate_messages_py::@94e188980ebab9e55e97"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "_hdl_global_localization_generate_messages_check_deps_QueryGlobalLocalization::@df500777fffda5bb3b62"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "_hdl_global_localization_generate_messages_check_deps_SetGlobalMap::@df500777fffda5bb3b62"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "_hdl_global_localization_generate_messages_check_deps_SetGlobalLocalizationEngine::@df500777fffda5bb3b62"
+		}
+	],
+	"id" : "hdl_global_localization_generate_messages_py::@df500777fffda5bb3b62",
+	"name" : "hdl_global_localization_generate_messages_py",
+	"paths" : 
+	{
+		"build" : "hdl_global_localization",
+		"source" : "hdl_global_localization"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/hdl_global_localization/CMakeFiles/hdl_global_localization_generate_messages_py",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/hdl_global_localization/CMakeFiles/hdl_global_localization_generate_messages_py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/hdl_global_localization/srv/_SetGlobalLocalizationEngine.py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/hdl_global_localization/srv/_SetGlobalMap.py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/hdl_global_localization/srv/_QueryGlobalLocalization.py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/hdl_global_localization/srv/__init__.py.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g  -shared -Wl,-soname,libgmock_maind.so -o ../lib/libgmock_maind.so CMakeFiles/gmock_main.dir/src/gmock_main.cc.o  -Wl,-rpath,/home/mr/livox_catkin_ws/src/lidar_3d_roi_pkg/build/gtest/lib ../lib/libgmockd.so ../lib/libgtestd.so -lpthread 
