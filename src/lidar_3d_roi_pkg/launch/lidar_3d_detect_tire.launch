@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="lidar_3d_roi_pkg" type="lidar_3d_detect_tire_node" name="lidar_detect_tire_node" output="screen">
+    <param name="x_min" value="0.0" />
+    <param name="x_max" value="6.4" />
+    <param name="y_min" value="-1.2" />
+    <param name="y_max" value="1.2" />
+    <param name="z_min" value="0.0" />
+    <param name="z_max" value="0.6" />
+    <param name="image_resolution" value="100" />
+    <param name="no_dilation" value="3" /> <!-- 팽창 연산 3회 적용 -->
+  </node>
+</launch>

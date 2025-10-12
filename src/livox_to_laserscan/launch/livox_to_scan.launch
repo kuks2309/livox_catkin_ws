@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Arguments -->
+    <arg name="cloud_in" default="/velodyne_points" />
+    <arg name="scan_out" default="/scan" />
+    <arg name="target_frame" default="velodyne" />
+    <arg name="min_height" default="-0.3" />
+    <arg name="max_height" default="1.8" />
+    <arg name="range_min" default="0.5" />
+    <arg name="range_max" default="80.0" />
+
+
+
+    <!-- Pointcloud to LaserScan conversion -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" 
+          name="livox_to_laserscan" output="screen">
+        
+        <!-- Topic remapping -->
+        <remap from="cloud_in" to="$(arg cloud_in)" />
+        <remap from="scan" to="$(arg scan_out)" />
+        
+        <!-- Frame settings -->
+        <param name="target_frame" value="$(arg target_frame)" />
+        
+        <!-- Height filtering -->
+        <param name="min_height" value="$(arg min_height)" />
+        <param name="max_height" value="$(arg max_height)" />
+        
+        <!-- Angular settings -->
+        <param name="angle_min" value="-3.14159" />
+        <param name="angle_max" value="3.14159" />
+        <param name="angle_increment" value="0.00436" />  <!-- ~0.25 degrees -->
+        
+        <!-- Range settings -->
+        <param name="range_min" value="$(arg range_min)" />
+        <param name="range_max" value="$(arg range_max)" />
+        
+        <!-- Performance settings -->
+        <param name="scan_time" value="0.1" />  <!-- 10 Hz -->
+        <param name="use_inf" value="true" />
+        <param name="transform_tolerance" value="0.01" />
+        <param name="concurrency_level" value="1" />
+        
+    </node>
+
+</launch>

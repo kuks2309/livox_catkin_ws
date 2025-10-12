@@ -1,0 +1,44 @@
+# ROS build artifacts
+build/
+devel/
+.catkin_workspace
+
+# External git repositories (cloned dependencies)
+src/fast_gicp/
+src/hdl_global_localization/
+src/hdl_graph_slam/
+src/hdl_localization/
+src/livox_ros_driver2/
+src/loam_velodyne/
+src/ndt_omp/
+
+# IDE settings
+.vscode/
+.idea/
+
+# ROS bags (data files)
+*.bag
+
+# Point cloud data files
+*.pcd
+
+# Logs
+*.log
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+cmake_install.cmake
+
+# Other
+.DS_Store
