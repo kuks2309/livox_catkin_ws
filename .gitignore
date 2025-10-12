@@ -22,6 +22,10 @@ src/ndt_omp/
 # Point cloud data files
 *.pcd
 
+# TF frames visualization files
+frames.gv
+frames.pdf
+
 # Logs
 *.log
 
